@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
+    <link rel="stylesheet" href="lib/fa/css/all.min.css">
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -19,15 +20,58 @@
         </div>
 
         <div class="main flex">
-            <div class="header flex">
-                <p>Generate your dream password!</p>
-            </div>
-        </div>
 
-        <div class="form">
-            <form action="" method="POST">
-                
-            </form>
+            <div class="form">
+
+                <div class="header flex">
+                    <p>Generate your dream password!</p>
+                </div>
+    
+                <form action="" method="POST" class="flex">
+
+                    <div class="element grid">
+                        <p>Include upper case (A-Z):</p>
+                        <div class="checkbox"><input type="checkbox"></div>
+                    </div>
+
+                    <div class="element grid">
+                        <p>Include lower case (a-z):</p>
+                        <div class="checkbox"><input type="checkbox"></div>
+                    </div>
+
+                    <div class="element grid">
+                        <p>Include numbers (0-9):</p>
+                        <div class="checkbox"><input type="checkbox"></div>
+                    </div>
+
+                    <div class="element grid">
+                        <p>Include symbols (!,$,% etc.):</p>
+                        <div class="checkbox"><input type="checkbox"></div>
+                    </div>
+                    
+                    <div class="element grid">
+                        <p>Include other symbols (/,|,{,},^,~ etc.):</p>
+                        <div class="checkbox"><input type="checkbox"></div>
+                    </div>
+
+                    <div class="element grid">
+                        <p>Include your own characters:</p>
+                        <input type="text" placeholder="e.g. BG[=52AP~+/6L">
+                    </div>
+
+                    <div class="element grid">
+                        <p>Password length:</p>
+                        <input type="number" min="0" step="1" placeholder="e.g. 25">
+                    </div>
+
+                    <div class="btn flex">
+                        <button type="submit">Generate</button>
+                    </div>
+
+                </form>
+
+            </div>
+
         </div>
 
     </div>

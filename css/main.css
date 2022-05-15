@@ -2,6 +2,7 @@
 
 :root {
     --gray: rgba(105, 105, 105, 0.8);
+    --gray-main: rgba(105, 105, 105, 1); 
     --gray-border: #3B3B3B;
 }
 
@@ -27,17 +28,21 @@ body {
     margin: 0 auto;
     overflow: auto;
     gap: 3rem;
+    max-width: 1000px;
+    padding: 0 2rem;
 }
 
 .con .main {
     border: 1px var(--gray-border) solid;
-    border-radius: 1rem;
-    width: 800px;
-    height: 700px;
+    border-radius: 0.5rem;
+    /* width: 800px;
+    height: 700px; */
+    width: 100%;
     background: var(--gray);
     margin: 0 auto;
     flex-direction: column;
     justify-content: space-between;
+    padding: 0 0 2rem 0;
 }
 
 .main .header {
@@ -46,4 +51,51 @@ body {
 
 .main .header p {
     font-size: 1.2rem;
+}
+
+.main .form {
+    width: 85%;
+}
+
+.main form {
+    flex-direction: column;
+    gap: 0.5rem;
+    line-height: 1.6rem;
+    background: var(--gray-main);
+    padding: 2rem;
+    /* border-radius: 1rem; */
+    border: red 1px solid;
+}
+
+.main form .element {
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.main form .element p {
+    grid-column: 1 / span 2;
+}
+
+.main form .element .checkbox{
+    text-align: center;
+}
+
+.main form .element input[type='text'],
+.main form .element input[type='number'] {
+    font-size: 1.2rem;
+    outline: none;
+    text-align: center;
+}
+
+.main form .btn {
+    margin: 1rem 0 0 0;
+}
+
+.main form .btn button[type='submit'] {
+    outline: 0;
+    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 100;
+    letter-spacing: 1px;
 }
