@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="lib/fa/css/all.min.css">
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/main.css">
@@ -16,12 +17,10 @@
     <div class="con flex">
 
         <div class="header flex">
-            <h1>Password Generator</h1>
+            <h1>P<i class="fa-solid fa-lock"></i>ssword Generator</h1>
         </div>
 
         <div class="main flex">
-
-            <div class="form">
 
                 <div class="header flex">
                     <p>Generate your dream password!</p>
@@ -29,48 +28,46 @@
     
                 <form action="" method="POST" class="flex">
 
-                    <div class="element grid">
+                    <div class="element">
                         <p>Include upper case (A-Z):</p>
                         <div class="checkbox"><input type="checkbox"></div>
                     </div>
 
-                    <div class="element grid">
+                    <div class="element">
                         <p>Include lower case (a-z):</p>
                         <div class="checkbox"><input type="checkbox"></div>
                     </div>
 
-                    <div class="element grid">
+                    <div class="element">
                         <p>Include numbers (0-9):</p>
                         <div class="checkbox"><input type="checkbox"></div>
                     </div>
 
-                    <div class="element grid">
+                    <div class="element">
                         <p>Include symbols (!,$,% etc.):</p>
                         <div class="checkbox"><input type="checkbox"></div>
                     </div>
                     
-                    <div class="element grid">
+                    <div class="element">
                         <p>Include other symbols (/,|,{,},^,~ etc.):</p>
                         <div class="checkbox"><input type="checkbox"></div>
                     </div>
 
-                    <div class="element grid">
+                    <div class="element">
                         <p>Include your own characters:</p>
-                        <input type="text" placeholder="e.g. BG[=52AP~+/6L">
+                        <div><input type="text" placeholder="e.g. G[5P+/6L"></div>
                     </div>
 
-                    <div class="element grid">
+                    <div class="element">
                         <p>Password length:</p>
-                        <input type="number" min="0" step="1" placeholder="e.g. 25">
+                        <div><input type="number" min="0" step="1" placeholder="e.g. 25"></div>
                     </div>
 
-                    <div class="btn flex">
-                        <button type="submit">Generate</button>
+                    <div class="form_btn flex">
+                        <button type="submit">Generate <i class="fa-solid fa-key"></i></button>
                     </div>
 
                 </form>
-
-            </div>
 
         </div>
 
