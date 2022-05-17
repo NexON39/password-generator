@@ -1,0 +1,41 @@
+@media(max-width: 720px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .con .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .con {
+        gap: 2rem;
+    }
+
+    .con .main {
+        margin: 0;
+        padding: 0 1rem 1rem 1rem;
+    }
+
+    .main .header {
+        padding: 1rem;
+    }
+
+    .main form {
+        gap: 0.1rem;
+    }
+
+    .main form .form_btn {
+        margin: 1rem 0 0 0;
+    }
+
+    .main form .form_btn button[type='submit'] {
+        font-size: 1rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .footer {
+        padding: 0;
+    }
+
+}
