@@ -17,7 +17,16 @@
 
     <!-- modal -->
         <div class="modal flex">
-            sss
+            <div class="exit flex">
+                <i class="fa-regular fa-circle-xmark exit_btn"></i>
+            </div>
+            <div class="password_area flex">
+                <h2>Your generated password</h2>
+                <div class="password flex">
+                    <div><input type="text" readonly class="generated_password"></div>
+                    <div class="flex copy_btn"><i class="fa-regular fa-copy"></i></div>
+                </div>
+            </div>
         </div>
     <!-- end modal -->
     
@@ -98,5 +107,10 @@
         Made by <a href="https://kscode.pl" target="_blank">KSCODE.PL</a> &copy;
     </div>
 
+    <div class="overlay"></div>
+
 </body>
+
+    <script src="js/modal.js"></script>
+
 </html>

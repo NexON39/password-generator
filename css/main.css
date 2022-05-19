@@ -23,28 +23,168 @@
     /* transform: translateX(-50%), translateY(-50%); */
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%) scale(0);
     z-index: 99;
-    width: 500px;
-    max-width: 70%;
-    height: 250px;
-    padding: 10rem;
+    width: 700px;
+    max-width: 80%;
+    height: 350px;
     background: var(--white);
     margin: auto;
     -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 1);
     -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 1);
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 1);
-    transition: border 200ms ease-in-out;
+    transition: border 200ms ease-in-out, transform 200ms ease-in-out ;
     border: 1px solid var(--white);
+    flex-direction: column;
 
-    display: none;
+}
+
+.modal.modalactive {
+    transform: translateX(-50%) translateY(-50%) scale(1);
 }
 
 .modal:hover {
     border: 1px solid var(--gold);
 }
 
+.modal .exit {
+    width: 100%;
+    justify-content: flex-end;
+    padding: 0.5rem 0.5rem 0 0;
+}
+
+.modal .exit i {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--black);
+    background: var(--gray);
+    border-radius: 50%;
+    transition: background 150ms ease-in-out;
+}
+
+.modal .exit i:hover {
+    background: var(--gold);
+}
+
+.modal .password_area {
+    flex-direction: column;
+    height: 100%;
+    gap: 0.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.modal .password_area h2 {
+    text-align: center;
+    margin: 1rem;
+}
+
+.modal .password {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+.modal .password input[type='text'] {
+    font-size: 1.7rem;
+    padding: 0.5rem;
+    border: 1px solid var(--gray);
+    outline: none;
+    height: 50px;
+    width: 100%;
+    transition: 300ms border ease-in-out;
+    cursor: default;
+    background: var(--gray);
+    text-align: center;
+}
+
+.modal .password input[type='text']:hover {
+    border: 1px solid var(--gold);
+}
+
+.modal .password div:nth-child(1) {
+    width: 100%;
+}
+
+.modal .password div:nth-child(2) {
+    border: 1px solid var(--gray);
+    width: 50px;
+    height: 50px;
+    transition: 300ms border ease-in-out;
+    cursor: pointer;
+}
+
+.modal .password div:nth-child(2)::before {
+    border: 1px solid var(--gold);
+    position: absolute;
+    /* content: 'Copy'; */
+    content: attr(data-before);
+    text-align: center;
+    padding: 0.3rem 0;
+    width: 80px;
+    background: var(--gray);
+    margin-top: 112px;
+    opacity: 0;
+    transition: 200ms opacity;
+}
+
+.modal .password div:nth-child(2)::after {
+    position: absolute;
+    content: '';
+    margin-top: 70px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 13px solid var(--gold);
+    opacity: 0;
+    transition: 200ms opacity;
+}
+
+.modal .password div:nth-child(2):hover::before {
+    opacity: 1;
+}
+
+.modal .password div:nth-child(2):hover::after {
+    opacity: 1;
+}
+
+.modal .password div:nth-child(2):hover {
+    border: 1px solid var(--gold);
+}
+
+.modal .password div:nth-child(2) i {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
 /* end modal */
+
+/* overlay */
+.overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+}
+
+.overlay.modalactive {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.con.modalactive {
+    filter: blur(0.4rem);
+}
+
+.footer.modalactive {
+    filter: blur(0.4rem);
+}
+
+/* end overlay */
 
 body {
     font-family: 'Lato', sans-serif;
@@ -65,6 +205,7 @@ body {
     max-width: 600px;
     padding: 0 2rem;
     /* filter: blur(0.4rem); */
+    transition: filter 200ms ease-in-out;
 }
 
 .con .header h1 {
@@ -230,6 +371,7 @@ body {
     gap: 0.2rem;
     padding: 0.5rem 0;
     /* filter: blur(0.4rem); */
+    transition: filter 200ms ease-in-out;
 }
 
 .footer a {
