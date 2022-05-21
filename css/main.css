@@ -57,13 +57,11 @@
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--black);
-    background: var(--gray);
-    border-radius: 50%;
-    transition: background 150ms ease-in-out;
+    transition: color 100ms;
 }
 
 .modal .exit i:hover {
-    background: var(--gold);
+    color: var(--gold);
 }
 
 .modal .password_area {

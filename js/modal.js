@@ -1,6 +1,8 @@
 const exit_btn = document.querySelector('.exit_btn');
 const copy_btn = document.querySelector('.copy_btn');
 
+// modal function
+
 function modal(data) {
 
     const password = String(data);
@@ -23,6 +25,8 @@ function modal(data) {
 
 }
 
+// copy password function 
+
 function copyPassword() {
 
     const generated_password = document.querySelector('.generated_password');
@@ -32,8 +36,10 @@ function copyPassword() {
     
 }
 
+// btn control
+
 exit_btn.addEventListener('click', function() {
-    modal(null);
+    modal("");
 })
 
 copy_btn.addEventListener('click', function() {
