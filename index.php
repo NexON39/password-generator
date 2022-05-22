@@ -1,5 +1,6 @@
 <?php
 require_once "application/controller/userData.class.php";
+require_once "application/model/generatePassword.class.php";
 error_reporting(E_ALL ^ E_WARNING);
 ?>
 
@@ -109,8 +110,8 @@ error_reporting(E_ALL ^ E_WARNING);
 
             <?php
             if (isset($_POST['submit_btn'])) {
-                $userData = new userData;
-                var_dump($userData->getUserData());
+                $password = new generatePassword;
+                var_dump($password->generate());
             }
             ?>
 

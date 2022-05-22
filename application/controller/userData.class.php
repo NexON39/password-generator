@@ -10,6 +10,7 @@ class userData
                         return $alert = "Password length must be in the range 1-2048";
                 } else
                     $_POST['passwordlength'] = 8;
+                // get params
                 $data = array($_POST['uppercases'], $_POST['lowercases'], $_POST['numbers'], $_POST['symbols'], $_POST['othersymbols']);
                 $params = array();
                 for ($i = 0; $i < count($data); $i++) {
@@ -21,6 +22,7 @@ class userData
                 }
                 array_push($params, $_POST['usercharacters']);
                 array_push($params, intval($_POST['passwordlength']));
+                // return params
                 return $params;
             } else
                 return $alert = "Complete at least one checkbox";
