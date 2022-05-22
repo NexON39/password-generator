@@ -5,7 +5,7 @@ class generatePassword extends userData
     {
         // return if alert
         if (is_string($this->getUserData()))
-            return $this->getUserData();
+            return array('alert', $this->getUserData());
 
         // include params
         if (is_array($this->getUserData())) {
@@ -15,7 +15,7 @@ class generatePassword extends userData
                 1 => range('a', 'z'),
                 2 => range(0, 9),
                 3 => array('!', '#', '$', '%', '&', '*', '+', '=', '?'),
-                4 => array('&#34;', '&#39;', '&#40;', '&#41;', '&#44;', '-', '.', '/', ':', ';', '<', '>', '[', '&#92;', ']', '^', '_', '`', '{', '|', '}', '~')
+                4 => array(html_entity_decode('&#34'), html_entity_decode('&#39'), html_entity_decode('&#40'), html_entity_decode('&#41'), html_entity_decode('&#44'), '-', '.', '/', ':', ';', '<', '>', '[', html_entity_decode('&#92'), ']', '^', '_', '`', '{', '|', '}', '~')
             ];
             $password_elements = array();
             for ($i = 0; $i < count($params) - 2; $i++) {
@@ -25,11 +25,11 @@ class generatePassword extends userData
                     }
                 }
             }
-            // include usercharacters
-            $usercharacters = str_replace(' ', '', $params[count($params) - 2]);
-            if (!empty($usercharacters)) {
-                for ($i = 0; $i < strlen($usercharacters); $i++) {
-                    array_push($password_elements, $usercharacters[$i]);
+            // include user_characters
+            $user_characters = str_replace(' ', '', $params[count($params) - 2]);
+            if (!empty($user_characters)) {
+                for ($i = 0; $i < strlen($user_characters); $i++) {
+                    array_push($password_elements, $user_characters[$i]);
                 }
             }
             // password generate
@@ -39,8 +39,8 @@ class generatePassword extends userData
                 $password_chars[$i] = $password_elements[rand(0, count($password_elements) - 1)];
             }
             $password = strval(implode($password_chars));
-            // return $password_elements;
-            return $password;
+            // return password
+            return array('password', $password);
         }
     }
 }

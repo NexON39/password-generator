@@ -1,6 +1,5 @@
 <?php
-require_once "application/controller/userData.class.php";
-require_once "application/model/generatePassword.class.php";
+require_once "autoloader/autoload.php";
 error_reporting(E_ALL ^ E_WARNING);
 ?>
 
@@ -14,6 +13,7 @@ error_reporting(E_ALL ^ E_WARNING);
     <title>Password Generator</title>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="lib/fa/css/all.min.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -108,13 +108,6 @@ error_reporting(E_ALL ^ E_WARNING);
 
             </form>
 
-            <?php
-            if (isset($_POST['submit_btn'])) {
-                $password = new generatePassword;
-                var_dump($password->generate());
-            }
-            ?>
-
         </div>
 
     </div>
@@ -125,8 +118,16 @@ error_reporting(E_ALL ^ E_WARNING);
 
     <div class="overlay"></div>
 
+    <div id="alert"></div>
+
 </body>
 
 <script src="js/modal.js"></script>
+<script src="js/alert.js"></script>
+
+<?php
+$password = new getPassword;
+$password->showPassword();
+?>
 
 </html>

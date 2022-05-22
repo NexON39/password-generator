@@ -186,11 +186,11 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    /* background-image: url(../img/bg3.png);
+    /* background-image: url(../img/bg1.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: left top; */
-    background: var(--gray);
+    background-color: var(--gray);
     overflow: hidden;
 }
 
@@ -374,4 +374,29 @@ body {
 
 .footer a {
     color: var(--gold);
+}
+
+/* alerts */
+.alert {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    padding: 0 2rem;
+    height: 50px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border-bottom: 2px solid var(--gold);
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 1);
+    animation: alert 5s ease-in-out;
+}
+
+.alert p {
+    font-size: 1.2rem;
+    text-align: center;
 }
