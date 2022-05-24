@@ -15,7 +15,7 @@ class generatePassword extends userData
                 1 => range('a', 'z'),
                 2 => range(0, 9),
                 3 => array('!', '#', '$', '%', '&', '*', '+', '=', '?'),
-                4 => array(html_entity_decode('&#34'), html_entity_decode('&#39'), html_entity_decode('&#40'), html_entity_decode('&#41'), html_entity_decode('&#44'), '-', '.', '/', ':', ';', '<', '>', '[', html_entity_decode('&#92'), ']', '^', '_', '`', '{', '|', '}', '~')
+                4 => array('"', '(', ')', ',', '-', '.', '/', ':', ';', '<', '>', '[', '¦', ']', '^', '_', '`', '{', '|', '}', '~')
             ];
             $password_elements = array();
             for ($i = 0; $i < count($params) - 2; $i++) {
@@ -40,7 +40,7 @@ class generatePassword extends userData
             }
             $password = strval(implode($password_chars));
             // return password
-            return array('password', $password);
+            return array('password', htmlspecialchars_decode($password, ENT_NOQUOTES));
         }
     }
 }
